@@ -1,0 +1,7 @@
+2025-03-27 09:09:25,380 [WARNING]  * Debugger is active!
+2025-03-27 09:09:25,386 [INFO]  * Debugger PIN: 103-694-322
+2025-03-27 09:09:28,345 [INFO] 127.0.0.1 - - [27/Mar/2025 09:09:28] "[36mGET / HTTP/1.1[0m" 304 -
+2025-03-27 09:09:28,384 [INFO] 127.0.0.1 - - [27/Mar/2025 09:09:28] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2025-03-27 09:09:28,387 [INFO] 127.0.0.1 - - [27/Mar/2025 09:09:28] "[33mGET /script.js HTTP/1.1[0m" 404 -
+2025-03-27 09:09:37,254 [INFO]  * Detected change in 'D:\\MINI\\backend.py', reloading
+2025-03-27 09:09:37,255 [INFO]  * Detected change in 'D:\\MINI\\backend.py', reloading

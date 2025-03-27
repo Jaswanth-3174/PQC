@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PQC Signer | Quantum-Proof Security</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dark-theme">
+    <div id="particles-js" class="particles"></div>
+    <div class="theme-toggle">
+        <button id="theme-toggle-btn" aria-label="Toggle theme">
+            <i class="fas fa-sun"></i>
+        </button>
+    </div>
+    <div class="container">
+        <header>
+            <h1>PQC Signer</h1>
+            <p>Quantum-Proof File Signing</p>
+            <div class="header-effect"></div>
+        </header>
+        <main>
+            <section class="controls">
+                <div class="input-group file-input-wrapper">
+                    <label for="file-input">Choose Your File</label>
+                    <div class="file-input-container">
+                        <i class="fas fa-file-upload file-icon"></i>
+                        <input type="file" id="file-input" accept=".py,.txt,.pdf" aria-label="Select file to sign">
+                        <span id="file-name" class="file-name">No file selected</span>
+                    </div>
+                    <div id="file-preview" class="file-preview"></div>
+                </div>
+                <div class="input-group key-id-display">
+                    <label>Key ID:</label>
+                    <input type="text" id="key-id-display" readonly placeholder="Generate a key to see the Key ID" aria-label="Generated Key ID">
+                </div>
+                <div class="button-group">
+                    <button id="generate-key-btn" class="btn btn-primary" aria-label="Generate key pair">
+                        <span class="btn-text">Generate Key</span>
+                        <span class="btn-effect"></span>
+                        <span class="spinner hidden"></span>
+                    </button>
+                    <button id="sign-btn" class="btn btn-secondary" disabled aria-label="Sign file">
+                        <span class="btn-text">Sign File</span>
+                        <span class="btn-effect"></span>
+                        <span class="spinner hidden"></span>
+                    </button>
+                    <button id="verify-btn" class="btn btn-tertiary" disabled aria-label="Verify signature">
+                        <span class="btn-text">Verify Signature</span>
+                        <span class="btn-effect"></span>
+                        <span class="spinner hidden"></span>
+                    </button>
+                </div>
+            </section>
+            <section class="log">
+                <h2>Activity Console</h2>
+                <div id="log-output" class="log-box" role="log" aria-live="polite"></div>
+            </section>
+        </main>
+        <footer>
+            <!-- <p>© 2025 xAI | Crafted with Grok 3</p> -->
+            <div class="footer-gradient"></div>
+        </footer>
+    </div>
+
+    <!-- Modal for Key Generation -->
+    <div id="key-gen-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-modal" class="close" role="button" aria-label="Close modal">×</span>
+            <h2>Generate Key Pair</h2>
+            <div class="modal-body">
+                <div class="modal-input-group">
+                    <label for="modal-algorithm">Select Algorithm:</label>
+                    <select id="modal-algorithm" aria-label="Select algorithm">
+                        <option value="Dilithium2">Dilithium2</option>
+                        <option value="Dilithium3">Dilithium3</option>
+                        <option value="Falcon-512">Falcon-512</option>
+                        <option value="SPHINCS+-SHA2-128s-simple">SPHINCS+-SHA2-128s</option>
+                    </select>
+                </div>
+                <div class="modal-input-group">
+                    <label for="modal-key-id">Key ID (optional):</label>
+                    <input type="text" id="modal-key-id" placeholder="Auto-generated if left blank" aria-label="Optional Key ID">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="modal-generate-btn" class="btn btn-primary" aria-label="Generate key">
+                    <span class="btn-text">Generate</span>
+                    <span class="btn-effect"></span>
+                    <span class="spinner hidden"></span>
+                </button>
+                <button id="modal-cancel-btn" class="btn btn-secondary" aria-label="Cancel">
+                    <span class="btn-text">Cancel</span>
+                    <span class="btn-effect"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="/script.js"></script>
+</body>
+</html>
